@@ -109,7 +109,7 @@
 <script>
 
     function getArea(parentId,selector){
-        var url="http://localhost:8080/areas/"+parentId;
+        var url=url_area+"/"+parentId;
         $.get(url,function (result) {
             var html="<option value=\"\">请选择</option>";
             $.each(result.data,function (index,value) {
@@ -156,6 +156,7 @@
                 alert("");
                 return;
             }
+            var url=url_user;
             $.post(url,user,function (result) {
                 if(result.code==200){
                     alert("success");
